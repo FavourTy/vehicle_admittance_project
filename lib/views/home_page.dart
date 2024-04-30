@@ -58,205 +58,212 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Form(
                     key: _formkey,
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        // const Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        //     Text('Reset Password',
-                        //         style: TextStyle(
-                        //             fontSize: 24, fontWeight: FontWeight.bold)),
-                        //     CloseButton(),
-                        //   ],
-                        // ),
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          // const Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     Text('Reset Password',
+                          //         style: TextStyle(
+                          //             fontSize: 24, fontWeight: FontWeight.bold)),
+                          //     CloseButton(),
+                          //   ],
+                          // ),
 
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "full name",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              TextFormField(
-                                  key: const ValueKey('emailAdress'),
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !value.contains("@")) {
-                                      return 'Please enter a valid email.';
-                                    }
-                                    return null;
-                                  },
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                      contentPadding:
-                                          const EdgeInsets.symmetric(
-                                              vertical: 15.0, horizontal: 10.0),
-                                      filled: true,
-                                      fillColor: Colors.grey,
-                                      border: OutlineInputBorder(
-                                        borderSide: const BorderSide(width: 1),
-                                        borderRadius:
-                                            BorderRadius.circular(7.0),
-                                      )),
-                                  controller: _fullnameController),
-                            ],
+                          const SizedBox(height: 10),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "full name",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                TextFormField(
+                                    key: const ValueKey('emailAdress'),
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !value.contains("@")) {
+                                        return 'Please enter a valid email.';
+                                      }
+                                      return null;
+                                    },
+                                    textInputAction: TextInputAction.next,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 15.0,
+                                                horizontal: 10.0),
+                                        filled: true,
+                                        fillColor: Colors.grey,
+                                        border: OutlineInputBorder(
+                                          borderSide:
+                                              const BorderSide(width: 1),
+                                          borderRadius:
+                                              BorderRadius.circular(7.0),
+                                        )),
+                                    controller: _fullnameController),
+                              ],
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "vehicle no",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              TextFormField(
-                                  key: const ValueKey('emailAdress'),
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !value.contains("@")) {
-                                      return 'Please enter a valid email.';
-                                    }
-                                    return null;
-                                  },
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                      contentPadding:
-                                          const EdgeInsets.symmetric(
-                                              vertical: 15.0, horizontal: 10.0),
-                                      filled: true,
-                                      fillColor: Colors.grey,
-                                      border: OutlineInputBorder(
-                                        borderSide: const BorderSide(width: 1),
-                                        borderRadius:
-                                            BorderRadius.circular(7.0),
-                                      )),
-                                  controller: _vehiclenoController),
-                            ],
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "vehicle no",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                TextFormField(
+                                    key: const ValueKey('emailAdress'),
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !value.contains("@")) {
+                                        return 'Please enter a valid email.';
+                                      }
+                                      return null;
+                                    },
+                                    textInputAction: TextInputAction.next,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 15.0,
+                                                horizontal: 10.0),
+                                        filled: true,
+                                        fillColor: Colors.grey,
+                                        border: OutlineInputBorder(
+                                          borderSide:
+                                              const BorderSide(width: 1),
+                                          borderRadius:
+                                              BorderRadius.circular(7.0),
+                                        )),
+                                    controller: _vehiclenoController),
+                              ],
+                            ),
                           ),
-                        ),
 
-                        // const Text(
-                        //   "vehicle no",
-                        //   style: TextStyle(color: Colors.grey),
-                        // ),
-                        // const TextField(
-                        //   decoration: InputDecoration(
-                        //     border: OutlineInputBorder(),
-                        //   ),
-                        // ),
-                        const SizedBox(height: 5),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "phone no",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              TextFormField(
-                                  key: const ValueKey('emailAdress'),
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !value.contains("@")) {
-                                      return 'Please enter a valid email.';
-                                    }
-                                    return null;
-                                  },
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                      contentPadding:
-                                          const EdgeInsets.symmetric(
-                                              vertical: 15.0, horizontal: 10.0),
-                                      filled: true,
-                                      fillColor: Colors.grey,
-                                      border: OutlineInputBorder(
-                                        borderSide: const BorderSide(width: 1),
-                                        borderRadius:
-                                            BorderRadius.circular(7.0),
-                                      )),
-                                  controller: _phonenoController),
-                            ],
+                          // const Text(
+                          //   "vehicle no",
+                          //   style: TextStyle(color: Colors.grey),
+                          // ),
+                          // const TextField(
+                          //   decoration: InputDecoration(
+                          //     border: OutlineInputBorder(),
+                          //   ),
+                          // ),
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "phone no",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                TextFormField(
+                                    key: const ValueKey('emailAdress'),
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !value.contains("@")) {
+                                        return 'Please enter a valid email.';
+                                      }
+                                      return null;
+                                    },
+                                    textInputAction: TextInputAction.next,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 15.0,
+                                                horizontal: 10.0),
+                                        filled: true,
+                                        fillColor: Colors.grey,
+                                        border: OutlineInputBorder(
+                                          borderSide:
+                                              const BorderSide(width: 1),
+                                          borderRadius:
+                                              BorderRadius.circular(7.0),
+                                        )),
+                                    controller: _phonenoController),
+                              ],
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "email",
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              TextFormField(
-                                  key: const ValueKey('emailAdress'),
-                                  validator: (value) {
-                                    if (value!.isEmpty ||
-                                        !value.contains("@")) {
-                                      return 'Please enter a valid email.';
-                                    }
-                                    return null;
-                                  },
-                                  textInputAction: TextInputAction.next,
-                                  keyboardType: TextInputType.text,
-                                  decoration: InputDecoration(
-                                      contentPadding:
-                                          const EdgeInsets.symmetric(
-                                              vertical: 15.0, horizontal: 10.0),
-                                      filled: true,
-                                      fillColor: Colors.grey,
-                                      border: OutlineInputBorder(
-                                        borderSide: const BorderSide(width: 1),
-                                        borderRadius:
-                                            BorderRadius.circular(7.0),
-                                      )),
-                                  controller: _emailController),
-                            ],
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "email",
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                TextFormField(
+                                    key: const ValueKey('emailAdress'),
+                                    validator: (value) {
+                                      if (value!.isEmpty ||
+                                          !value.contains("@")) {
+                                        return 'Please enter a valid email.';
+                                      }
+                                      return null;
+                                    },
+                                    textInputAction: TextInputAction.next,
+                                    keyboardType: TextInputType.text,
+                                    decoration: InputDecoration(
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 15.0,
+                                                horizontal: 10.0),
+                                        filled: true,
+                                        fillColor: Colors.grey,
+                                        border: OutlineInputBorder(
+                                          borderSide:
+                                              const BorderSide(width: 1),
+                                          borderRadius:
+                                              BorderRadius.circular(7.0),
+                                        )),
+                                    controller: _emailController),
+                              ],
+                            ),
                           ),
-                        ),
 
-                        const SizedBox(height: 20),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => const SuccessPage()),
-                            );
-                          },
-                          style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0)),
-                              backgroundColor: Colors.green,
-                              minimumSize: const Size(150, 50)),
-                          child: const Text(
-                            'Submit',
-                            style: TextStyle(color: Colors.white),
+                          const SizedBox(height: 20),
+                          ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => const SuccessPage()),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                backgroundColor: Colors.green,
+                                minimumSize: const Size(150, 50)),
+                            child: const Text(
+                              'Submit',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ]),
                   ),
                 ),
               ]),
