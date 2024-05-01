@@ -6,14 +6,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900],
-      appBar: AppBar(
-        backgroundColor: Colors.grey[900],
-        title: const Text(
-          'Vehicle Registration System',
-          style: TextStyle(color: Colors.grey),
-        ),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.grey[900],
+      //   title: const Text(
+      //     'Vehicle Registration System',
+      //     style: TextStyle(color: Colors.grey),
+      //   ),
+      //   centerTitle: true,
+      // ),
       body: Column(
         children: [
           Container(
