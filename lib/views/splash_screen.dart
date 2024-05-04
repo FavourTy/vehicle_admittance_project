@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:vehicle_admittance_dashboard/views/home_page.dart';
 
@@ -6,142 +7,181 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900],
-      // appBar: AppBar(
-      //   backgroundColor: Colors.grey[900],
-      //   title: const Text(
-      //     'Vehicle Registration System',
-      //     style: TextStyle(color: Colors.grey),
-      //   ),
-      //   centerTitle: true,
-      // ),
       body: Column(
         children: [
-          Container(
-            height: 100,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/fuoy_logo.png'),
-                fit: BoxFit.contain,
+          const SizedBox(
+            height: 50,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Vehicle Registration",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 40),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  const Text(
+                    "System",
+                    style: TextStyle(
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText("Fast and Reliable",
+                          textStyle: const TextStyle(color: Colors.white)),
+                      TyperAnimatedText('Simplify Your Entry',
+                          textStyle: const TextStyle(color: Colors.white)),
+                      TyperAnimatedText('Secure',
+                          textStyle: const TextStyle(color: Colors.white)),
+                      //TyperAnimatedText('- W.Edwards Deming'),
+                    ],
+                    repeatForever: true,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => MyHomePage()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        backgroundColor: Colors.green,
+                        minimumSize: const Size(150, 50)),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          'Register now',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        SizedBox(
+                          width: 7,
+                        ),
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                          size: 15,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ),
+              Image.asset(
+                "assets/images/listic.jpg",
+                height: 350,
+                fit: BoxFit.contain,
+              )
+            ],
           ),
           const SizedBox(
-            height: 10,
+            height: 35,
           ),
-          const Center(
-            child: Text(
-              'Welcome to Vehicle Registration System',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
+          const Divider(),
+          const SizedBox(
+            height: 50,
           ),
-          // Overview of Registration Process
-          const Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Text(
-                    'Registration Process',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                  child: const Row(
+                children: [
+                  Icon(
+                    Icons.speed,
+                    size: 30,
+                    color: Colors.white,
                   ),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  ' Fill out the registration form with your vehicle details.',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
+                  SizedBox(
+                    width: 10,
                   ),
-                ),
-                Text(
-                  ' Verify your information on the confirmation page.',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-                Text(
-                  ' Receive a confirmation of your registration.',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
-          // Call-to-Action Button
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                  backgroundColor: Colors.green,
-                  minimumSize: const Size(150, 50)),
-              child: const Text(
-                'Register now',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-          //   child: ElevatedButton(
-          //     onPressed: () {
-          //       Navigator.of(context).push(
-          //         MaterialPageRoute(builder: (context) => MyHomePage()),
-          //       );
-          //     },
-          //     child: const Text(
-          //       'Register Now',
-          //       style: TextStyle(fontSize: 18),
-          //     ),
-          //   ),
-          // ),
-          // Benefits Section
-          const Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Benefits of the System',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  ' Streamlined registration process',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-                Text(
-                  'Enhanced security measures',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-                Text(
-                  ' Time-saving features',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Efficiency",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        "Streamlined registration process",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  )
+                ],
+              )),
+              Container(
+                  child: const Row(
+                children: [
+                  Icon(
+                    Icons.security,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Security",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        "Enhanced security measures",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  )
+                ],
+              )),
+              Container(
+                  child: const Row(
+                children: [
+                  Icon(
+                    Icons.access_time,
+                    size: 30,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Speed",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        "Time-saving features",
+                        style: TextStyle(color: Colors.white),
+                      )
+                    ],
+                  )
+                ],
+              )),
+            ],
+          )
         ],
       ),
     );
