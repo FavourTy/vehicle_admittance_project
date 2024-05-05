@@ -99,11 +99,11 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                  child: const Row(
+              SizedBox(
+                  child: Row(
                 children: [
                   Icon(
                     Icons.speed,
@@ -128,8 +128,8 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               )),
-              Container(
-                  child: const Row(
+              SizedBox(
+                  child: Row(
                 children: [
                   Icon(
                     Icons.security,
@@ -154,8 +154,8 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               )),
-              Container(
-                  child: const Row(
+              SizedBox(
+                  child: Row(
                 children: [
                   Icon(
                     Icons.access_time,
