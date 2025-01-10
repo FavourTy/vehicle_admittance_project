@@ -111,6 +111,27 @@ class _HomeScreenState extends State<HomeScreen> {
                           "",
                     );
                   }),
+              SizedBox(height: 20),
+              FutureBuilder(
+                  future: WeatherRepository()
+                      .fetchCurrentWeather(lat: 55.751244, lon: 37.618423),
+                  builder: (_, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+                    if (snapshot.data?.error != null) {
+                      return Text(snapshot.data?.error ??
+                          "Emabinu.... No weather data");
+                    }
+                    return WeatherCard(
+                      country: snapshot.data?.model?.sys?.country ?? "",
+                      location: snapshot.data?.model?.name ?? "",
+                      temp: snapshot.data?.model?.main?.temp ?? 0,
+                      weatherType: snapshot
+                              .data?.model?.weather?.firstOrNull?.description ??
+                          "",
+                    );
+                  }),
             ],
           ),
         ),
